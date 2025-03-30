@@ -6,7 +6,7 @@ option go_package = "nolood.template.v1;templatev1";
 
 service TemplateService {
   rpc AddTemplate (AddTemplateRequest) returns (AddTemplateResponse);
-  rpc GetTemplates (GetTemplatesRequest) returns (GetTemplatesResponse);
+  rpc GetTemplate (GetTemplateRequest) returns (GetTemplateResponse);
   rpc UpdateTemplate (UpdateTemplateRequest) returns (UpdateTemplateResponse);
   rpc DeleteTemplate (DeleteTemplateRequest) returns (DeleteTemplateResponse);
 }
@@ -22,11 +22,11 @@ message AddTemplateResponse {
   string name = 2;
 }
 
-message GetTemplatesRequest {
+message GetTemplateRequest {
   string app_id = 1;
 }
 
-message GetTemplatesResponse {
+message GetTemplateResponse {
   repeated Template templates = 1;
 }
 

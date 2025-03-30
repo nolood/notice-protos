@@ -1,4 +1,4 @@
-module notice-protos
+module github.com/nolood/notice-protos
 
 go 1.22.2
 
@@ -8,7 +8,6 @@ require (
 )
 
 require (
-	github.com/nolood/notice-protos v0.0.0-20250330134618-a69c7737b834 // indirect
 	golang.org/x/net v0.34.0 // indirect
 	golang.org/x/sys v0.29.0 // indirect
 	golang.org/x/text v0.21.0 // indirect

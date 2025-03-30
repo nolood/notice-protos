@@ -133,27 +133,27 @@ func (x *AddTemplateResponse) GetName() string {
 	return ""
 }
 
-type GetTemplatesRequest struct {
+type GetTemplateRequest struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	AppId         string                 `protobuf:"bytes,1,opt,name=app_id,json=appId,proto3" json:"app_id,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
 
-func (x *GetTemplatesRequest) Reset() {
-	*x = GetTemplatesRequest{}
+func (x *GetTemplateRequest) Reset() {
+	*x = GetTemplateRequest{}
 	mi := &file_template_proto_msgTypes[2]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
 
-func (x *GetTemplatesRequest) String() string {
+func (x *GetTemplateRequest) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*GetTemplatesRequest) ProtoMessage() {}
+func (*GetTemplateRequest) ProtoMessage() {}
 
-func (x *GetTemplatesRequest) ProtoReflect() protoreflect.Message {
+func (x *GetTemplateRequest) ProtoReflect() protoreflect.Message {
 	mi := &file_template_proto_msgTypes[2]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -165,39 +165,39 @@ func (x *GetTemplatesRequest) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use GetTemplatesRequest.ProtoReflect.Descriptor instead.
-func (*GetTemplatesRequest) Descriptor() ([]byte, []int) {
+// Deprecated: Use GetTemplateRequest.ProtoReflect.Descriptor instead.
+func (*GetTemplateRequest) Descriptor() ([]byte, []int) {
 	return file_template_proto_rawDescGZIP(), []int{2}
 }
 
-func (x *GetTemplatesRequest) GetAppId() string {
+func (x *GetTemplateRequest) GetAppId() string {
 	if x != nil {
 		return x.AppId
 	}
 	return ""
 }
 
-type GetTemplatesResponse struct {
+type GetTemplateResponse struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	Templates     []*Template            `protobuf:"bytes,1,rep,name=templates,proto3" json:"templates,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
 
-func (x *GetTemplatesResponse) Reset() {
-	*x = GetTemplatesResponse{}
+func (x *GetTemplateResponse) Reset() {
+	*x = GetTemplateResponse{}
 	mi := &file_template_proto_msgTypes[3]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
 
-func (x *GetTemplatesResponse) String() string {
+func (x *GetTemplateResponse) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*GetTemplatesResponse) ProtoMessage() {}
+func (*GetTemplateResponse) ProtoMessage() {}
 
-func (x *GetTemplatesResponse) ProtoReflect() protoreflect.Message {
+func (x *GetTemplateResponse) ProtoReflect() protoreflect.Message {
 	mi := &file_template_proto_msgTypes[3]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -209,12 +209,12 @@ func (x *GetTemplatesResponse) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use GetTemplatesResponse.ProtoReflect.Descriptor instead.
-func (*GetTemplatesResponse) Descriptor() ([]byte, []int) {
+// Deprecated: Use GetTemplateResponse.ProtoReflect.Descriptor instead.
+func (*GetTemplateResponse) Descriptor() ([]byte, []int) {
 	return file_template_proto_rawDescGZIP(), []int{3}
 }
 
-func (x *GetTemplatesResponse) GetTemplates() []*Template {
+func (x *GetTemplateResponse) GetTemplates() []*Template {
 	if x != nil {
 		return x.Templates
 	}
@@ -516,10 +516,10 @@ const file_template_proto_rawDesc = "" +
 	"\acontent\x18\x03 \x01(\tR\acontent\"9\n" +
 	"\x13AddTemplateResponse\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12\x12\n" +
-	"\x04name\x18\x02 \x01(\tR\x04name\",\n" +
-	"\x13GetTemplatesRequest\x12\x15\n" +
-	"\x06app_id\x18\x01 \x01(\tR\x05appId\"H\n" +
-	"\x14GetTemplatesResponse\x120\n" +
+	"\x04name\x18\x02 \x01(\tR\x04name\"+\n" +
+	"\x12GetTemplateRequest\x12\x15\n" +
+	"\x06app_id\x18\x01 \x01(\tR\x05appId\"G\n" +
+	"\x13GetTemplateResponse\x120\n" +
 	"\ttemplates\x18\x01 \x03(\v2\x12.template.TemplateR\ttemplates\"H\n" +
 	"\bTemplate\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12\x12\n" +
@@ -538,10 +538,10 @@ const file_template_proto_rawDesc = "" +
 	"\x06app_id\x18\x01 \x01(\tR\x05appId\x12\x0e\n" +
 	"\x02id\x18\x02 \x01(\tR\x02id\"(\n" +
 	"\x16DeleteTemplateResponse\x12\x0e\n" +
-	"\x02id\x18\x01 \x01(\tR\x02id2\xd6\x02\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id2\xd3\x02\n" +
 	"\x0fTemplateService\x12J\n" +
-	"\vAddTemplate\x12\x1c.template.AddTemplateRequest\x1a\x1d.template.AddTemplateResponse\x12M\n" +
-	"\fGetTemplates\x12\x1d.template.GetTemplatesRequest\x1a\x1e.template.GetTemplatesResponse\x12S\n" +
+	"\vAddTemplate\x12\x1c.template.AddTemplateRequest\x1a\x1d.template.AddTemplateResponse\x12J\n" +
+	"\vGetTemplate\x12\x1c.template.GetTemplateRequest\x1a\x1d.template.GetTemplateResponse\x12S\n" +
 	"\x0eUpdateTemplate\x12\x1f.template.UpdateTemplateRequest\x1a .template.UpdateTemplateResponse\x12S\n" +
 	"\x0eDeleteTemplate\x12\x1f.template.DeleteTemplateRequest\x1a .template.DeleteTemplateResponseB\x1fZ\x1dnolood.template.v1;templatev1b\x06proto3"
 
@@ -561,8 +561,8 @@ var file_template_proto_msgTypes = make([]protoimpl.MessageInfo, 9)
 var file_template_proto_goTypes = []any{
 	(*AddTemplateRequest)(nil),     // 0: template.AddTemplateRequest
 	(*AddTemplateResponse)(nil),    // 1: template.AddTemplateResponse
-	(*GetTemplatesRequest)(nil),    // 2: template.GetTemplatesRequest
-	(*GetTemplatesResponse)(nil),   // 3: template.GetTemplatesResponse
+	(*GetTemplateRequest)(nil),     // 2: template.GetTemplateRequest
+	(*GetTemplateResponse)(nil),    // 3: template.GetTemplateResponse
 	(*Template)(nil),               // 4: template.Template
 	(*UpdateTemplateRequest)(nil),  // 5: template.UpdateTemplateRequest
 	(*UpdateTemplateResponse)(nil), // 6: template.UpdateTemplateResponse
@@ -570,13 +570,13 @@ var file_template_proto_goTypes = []any{
 	(*DeleteTemplateResponse)(nil), // 8: template.DeleteTemplateResponse
 }
 var file_template_proto_depIdxs = []int32{
-	4, // 0: template.GetTemplatesResponse.templates:type_name -> template.Template
+	4, // 0: template.GetTemplateResponse.templates:type_name -> template.Template
 	0, // 1: template.TemplateService.AddTemplate:input_type -> template.AddTemplateRequest
-	2, // 2: template.TemplateService.GetTemplates:input_type -> template.GetTemplatesRequest
+	2, // 2: template.TemplateService.GetTemplate:input_type -> template.GetTemplateRequest
 	5, // 3: template.TemplateService.UpdateTemplate:input_type -> template.UpdateTemplateRequest
 	7, // 4: template.TemplateService.DeleteTemplate:input_type -> template.DeleteTemplateRequest
 	1, // 5: template.TemplateService.AddTemplate:output_type -> template.AddTemplateResponse
-	3, // 6: template.TemplateService.GetTemplates:output_type -> template.GetTemplatesResponse
+	3, // 6: template.TemplateService.GetTemplate:output_type -> template.GetTemplateResponse
 	6, // 7: template.TemplateService.UpdateTemplate:output_type -> template.UpdateTemplateResponse
 	8, // 8: template.TemplateService.DeleteTemplate:output_type -> template.DeleteTemplateResponse
 	5, // [5:9] is the sub-list for method output_type

@@ -20,7 +20,7 @@ const _ = grpc.SupportPackageIsVersion9
 
 const (
 	TemplateService_AddTemplate_FullMethodName    = "/template.TemplateService/AddTemplate"
-	TemplateService_GetTemplates_FullMethodName   = "/template.TemplateService/GetTemplates"
+	TemplateService_GetTemplate_FullMethodName    = "/template.TemplateService/GetTemplate"
 	TemplateService_UpdateTemplate_FullMethodName = "/template.TemplateService/UpdateTemplate"
 	TemplateService_DeleteTemplate_FullMethodName = "/template.TemplateService/DeleteTemplate"
 )
@@ -30,7 +30,7 @@ const (
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type TemplateServiceClient interface {
 	AddTemplate(ctx context.Context, in *AddTemplateRequest, opts ...grpc.CallOption) (*AddTemplateResponse, error)
-	GetTemplates(ctx context.Context, in *GetTemplatesRequest, opts ...grpc.CallOption) (*GetTemplatesResponse, error)
+	GetTemplate(ctx context.Context, in *GetTemplateRequest, opts ...grpc.CallOption) (*GetTemplateResponse, error)
 	UpdateTemplate(ctx context.Context, in *UpdateTemplateRequest, opts ...grpc.CallOption) (*UpdateTemplateResponse, error)
 	DeleteTemplate(ctx context.Context, in *DeleteTemplateRequest, opts ...grpc.CallOption) (*DeleteTemplateResponse, error)
 }
@@ -53,10 +53,10 @@ func (c *templateServiceClient) AddTemplate(ctx context.Context, in *AddTemplate
 	return out, nil
 }
 
-func (c *templateServiceClient) GetTemplates(ctx context.Context, in *GetTemplatesRequest, opts ...grpc.CallOption) (*GetTemplatesResponse, error) {
+func (c *templateServiceClient) GetTemplate(ctx context.Context, in *GetTemplateRequest, opts ...grpc.CallOption) (*GetTemplateResponse, error) {
 	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
-	out := new(GetTemplatesResponse)
-	err := c.cc.Invoke(ctx, TemplateService_GetTemplates_FullMethodName, in, out, cOpts...)
+	out := new(GetTemplateResponse)
+	err := c.cc.Invoke(ctx, TemplateService_GetTemplate_FullMethodName, in, out, cOpts...)
 	if err != nil {
 		return nil, err
 	}
@@ -88,7 +88,7 @@ func (c *templateServiceClient) DeleteTemplate(ctx context.Context, in *DeleteTe
 // for forward compatibility.
 type TemplateServiceServer interface {
 	AddTemplate(context.Context, *AddTemplateRequest) (*AddTemplateResponse, error)
-	GetTemplates(context.Context, *GetTemplatesRequest) (*GetTemplatesResponse, error)
+	GetTemplate(context.Context, *GetTemplateRequest) (*GetTemplateResponse, error)
 	UpdateTemplate(context.Context, *UpdateTemplateRequest) (*UpdateTemplateResponse, error)
 	DeleteTemplate(context.Context, *DeleteTemplateRequest) (*DeleteTemplateResponse, error)
 	mustEmbedUnimplementedTemplateServiceServer()
@@ -104,8 +104,8 @@ type UnimplementedTemplateServiceServer struct{}
 func (UnimplementedTemplateServiceServer) AddTemplate(context.Context, *AddTemplateRequest) (*AddTemplateResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method AddTemplate not implemented")
 }
-func (UnimplementedTemplateServiceServer) GetTemplates(context.Context, *GetTemplatesRequest) (*GetTemplatesResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method GetTemplates not implemented")
+func (UnimplementedTemplateServiceServer) GetTemplate(context.Context, *GetTemplateRequest) (*GetTemplateResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetTemplate not implemented")
 }
 func (UnimplementedTemplateServiceServer) UpdateTemplate(context.Context, *UpdateTemplateRequest) (*UpdateTemplateResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method UpdateTemplate not implemented")
@@ -152,20 +152,20 @@ func _TemplateService_AddTemplate_Handler(srv interface{}, ctx context.Context, 
 	return interceptor(ctx, in, info, handler)
 }
 
-func _TemplateService_GetTemplates_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(GetTemplatesRequest)
+func _TemplateService_GetTemplate_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetTemplateRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(TemplateServiceServer).GetTemplates(ctx, in)
+		return srv.(TemplateServiceServer).GetTemplate(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: TemplateService_GetTemplates_FullMethodName,
+		FullMethod: TemplateService_GetTemplate_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(TemplateServiceServer).GetTemplates(ctx, req.(*GetTemplatesRequest))
+		return srv.(TemplateServiceServer).GetTemplate(ctx, req.(*GetTemplateRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -218,8 +218,8 @@ var TemplateService_ServiceDesc = grpc.ServiceDesc{
 			Handler:    _TemplateService_AddTemplate_Handler,
 		},
 		{
-			MethodName: "GetTemplates",
-			Handler:    _TemplateService_GetTemplates_Handler,
+			MethodName: "GetTemplate",
+			Handler:    _TemplateService_GetTemplate_Handler,
 		},
 		{
 			MethodName: "UpdateTemplate",
